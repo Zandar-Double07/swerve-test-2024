@@ -40,11 +40,27 @@ public class Module {
   public Module(ModuleIO io, int index) {
     this.io = io;
     this.index = index;
+    // R2=0.99427 ﻿
+    // ﻿﻿﻿﻿﻿﻿ 	kS=0.15330 ﻿
+    // ﻿﻿﻿﻿﻿﻿ 	kV=0.13586 ﻿
 
+    //     ﻿﻿﻿﻿﻿﻿ 	R2=0.99686 ﻿
+    // ﻿﻿﻿﻿﻿﻿ 	kS=0.16576 ﻿
+    // ﻿﻿﻿﻿﻿﻿ 	kV=0.13539
+
+    // with 2.0 ramp volts
+    // In the parameter it goes (kS, kV, kA)
+    // kS = 0.36295 ﻿
+    // kV = 0.13244 ﻿
+    // kA = 0.99948 ﻿
     // Switch constants based on mode (the physics simulator is treated as a
     // separate robot with different tuning)
     switch (Constants.currentMode) {
       case REAL:
+        driveFeedforward = new SimpleMotorFeedforward(0.36295, 0.13244);
+        driveFeedback = new PIDController(0.1, 0.0, 0.0);
+        turnFeedback = new PIDController(5, 1, 0.0);
+        break;
       case REPLAY:
         driveFeedforward = new SimpleMotorFeedforward(0.1, 0.13);
         driveFeedback = new PIDController(0.05, 0.0, 0.0);

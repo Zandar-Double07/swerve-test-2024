@@ -10,6 +10,14 @@
 // but WITHOUT ANY WARRANTY; without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 // GNU General Public License for more details.
+//	R2=0.99938 ﻿
+// ﻿﻿﻿﻿﻿﻿ 	kS=0.25986 ﻿
+// ﻿﻿﻿﻿﻿﻿ 	kV=0.13400 ﻿
+
+// with 2.0 ramp volts
+// R2=0.99948 ﻿
+// ﻿﻿﻿﻿﻿﻿ 	kS=0.36295 ﻿
+// ﻿﻿﻿﻿﻿﻿ 	kV=0.13244 ﻿
 
 package frc.robot.subsystems.drive;
 
